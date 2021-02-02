@@ -44,7 +44,37 @@
 			<artifactId>javafx-controls</artifactId>
 			<version>11.0.2</version>
 		</dependency>
+
+		<dependency>
+			<groupId>clojure-interop</groupId>
+			<artifactId>javax.sound</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+
 	</dependencies>
+
+	<repositories>
+		<repository> <!-- You probably have this already -->
+			<id>central</id>
+			<url>https://repo1.maven.org/maven2/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		<repository><!-- You'll need to add this -->
+			<id>clojars</id>
+			<url>https://repo.clojars.org/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+	</repositories>
 
 	<build>
 		<plugins>
