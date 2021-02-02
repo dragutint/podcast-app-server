@@ -18,10 +18,10 @@ public class Milica implements CommandLineRunner {
     AudioFormat getAudioFormat()
     {
         float sampleRate = 16000;
-        int sampleSizeInBits = 8;
-        int channels = 2;
+        int sampleSizeInBits = 16;
+        int channels = 1;
         boolean signed = true;
-        boolean bigEndian = true;
+        boolean bigEndian = false;
         AudioFormat format = new AudioFormat(sampleRate, sampleSizeInBits,
                 channels, signed, bigEndian);
         return format;
@@ -47,6 +47,7 @@ public class Milica implements CommandLineRunner {
             System.out.println("Start recording");
 
             AudioSystem.write(ais, fileType, wavFile);
+
         }catch (LineUnavailableException ex) {
             ex.printStackTrace();
         } catch (IOException ioe) {
