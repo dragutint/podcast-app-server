@@ -10,7 +10,7 @@ public class AudioRecorder {
 
     private TargetDataLine line;
 
-    private AudioFormat getAudioFormat() {
+    public static AudioFormat getAudioFormat() {
         float sampleRate = 16000;
         int sampleSizeInBits = 16;
         int channels = 1;
@@ -23,7 +23,7 @@ public class AudioRecorder {
     public void start() {
         if (line == null) {
             try {
-                AudioFormat format = getAudioFormat();
+                AudioFormat format = new AudioFormat(AudioFormat.Encoding.PCM_SIGNED, 44100, 16, 2, 4, 44100, true);
                 DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
 
 
@@ -43,11 +43,7 @@ public class AudioRecorder {
 
                     System.out.println("Start recording");
 
-                    try {
-                        AudioSystem.write(ais, fileType, wavFile);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+
                 });
                 thread.start();
             } catch (LineUnavailableException ex) {
