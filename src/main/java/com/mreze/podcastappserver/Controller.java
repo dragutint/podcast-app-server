@@ -11,22 +11,30 @@ public class Controller {
     private Button btnStop;
 
     private final AudioRecorder recorder;
-
+    private final Streaming  streaming;
     public Controller() {
         this.recorder = new AudioRecorder();
+        this.streaming = new Streaming();
     }
+
+    Thread t1;
 
 
     @FXML
     void doSomething(ActionEvent event) {
-        recorder.start();
 
+        t1 = new Thread(new Runnable() {
+            public void run()
+            {
+                streaming.startStreaming();
+            }});
+        t1.start();
     }
 
     @FXML
     void  doStop(ActionEvent event)
     {
-        recorder.finish();
+        streaming.stopStreaming();
     }
 
 }
