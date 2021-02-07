@@ -10,7 +10,11 @@ public class Controller {
     private Button btnStart;
     private Button btnStop;
 
-    Milica recorder = new Milica();
+    private final AudioRecorder recorder;
+
+    public Controller() {
+        this.recorder = new AudioRecorder();
+    }
 
 
     @FXML
