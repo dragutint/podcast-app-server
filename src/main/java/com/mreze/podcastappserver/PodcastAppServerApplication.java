@@ -12,8 +12,8 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 public class PodcastAppServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PodcastAppServerApplication.class,args);
-		//Application.launch(PodcastApplication.class, args);
+		//SpringApplication.run(PodcastAppServerApplication.class,args);
+		Application.launch(PodcastApplication.class, args);
 	}
 
 }

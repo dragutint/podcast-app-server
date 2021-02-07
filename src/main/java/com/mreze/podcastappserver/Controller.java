@@ -7,11 +7,22 @@ import javafx.scene.control.Button;
 public class Controller {
 
     @FXML
-    private Button btnAction1;
+    private Button btnStart;
+    private Button btnStop;
+
+    Milica recorder = new Milica();
+
 
     @FXML
     void doSomething(ActionEvent event) {
-        System.out.println("click");
+        recorder.start();
+
+    }
+
+    @FXML
+    void  doStop(ActionEvent event)
+    {
+        recorder.finish();
     }
 
 }
